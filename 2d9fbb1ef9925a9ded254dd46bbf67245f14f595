@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_630e9533",
+        "filename": "component/video/enc/Exynos_OMX_Venc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-03-11T01:04:23Z",
+      "side": 1,
+      "message": "You can change this to %zx instead of casting.",
+      "range": {
+        "startLine": 726,
+        "startChar": 71,
+        "endLine": 726,
+        "endChar": 72
+      },
+      "revId": "2d9fbb1ef9925a9ded254dd46bbf67245f14f595",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_031d5965",
+        "filename": "component/video/enc/h264/Exynos_OMX_H264enc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2121,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-03-11T01:04:23Z",
+      "side": 1,
+      "message": "Cast the result to unsigned int so this line gets shorter?",
+      "revId": "2d9fbb1ef9925a9ded254dd46bbf67245f14f595",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
