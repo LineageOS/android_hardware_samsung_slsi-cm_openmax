@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "ffb9cba7_43c6f19c",
+        "filename": "component/video/enc/Exynos_OMX_Venc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2016-03-11T02:04:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffb9cba7_630e9533",
+      "revId": "2d9fbb1ef9925a9ded254dd46bbf67245f14f595",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffb9cba7_031d5965",
         "filename": "component/video/enc/h264/Exynos_OMX_H264enc.c",
         "patchSetId": 2
@@ -36,6 +54,24 @@
       "writtenOn": "2016-03-11T01:04:23Z",
       "side": 1,
       "message": "Cast the result to unsigned int so this line gets shorter?",
+      "revId": "2d9fbb1ef9925a9ded254dd46bbf67245f14f595",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_63c1b580",
+        "filename": "component/video/enc/h264/Exynos_OMX_H264enc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2121,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2016-03-11T02:04:25Z",
+      "side": 1,
+      "message": "Done, this may still require the cast to uintptr_t",
+      "parentUuid": "ffb9cba7_031d5965",
       "revId": "2d9fbb1ef9925a9ded254dd46bbf67245f14f595",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
