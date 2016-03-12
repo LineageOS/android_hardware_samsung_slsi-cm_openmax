@@ -16,6 +16,24 @@
       "revId": "9bd76fc6f1e69109f9497dc12be3a2c18a21dbcf",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_830866d9",
+        "filename": "component/video/enc/Exynos_OMX_Venc.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-03-12T11:12:43Z",
+      "side": 1,
+      "message": "If ppBuf[0] is a pointer type, you don\u0027t need to cast it to unsigned int anymore.",
+      "parentUuid": "ffb9cba7_6360d2a6",
+      "revId": "9bd76fc6f1e69109f9497dc12be3a2c18a21dbcf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
