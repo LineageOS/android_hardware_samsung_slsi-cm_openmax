@@ -1621,11 +1621,6 @@ OMX_ERRORTYPE Exynos_H264Dec_GetConfig(
         OMX_CONFIG_RECTTYPE    *pDstRectType = NULL;
         pH264Dec = (EXYNOS_H264DEC_HANDLE *)((EXYNOS_OMX_VIDEODEC_COMPONENT *)pExynosComponent->hComponentHandle)->hCodecHandle;
 
-        if (pH264Dec->hMFCH264Handle.bConfiguredMFCSrc == OMX_FALSE) {
-            ret = OMX_ErrorNotReady;
-            break;
-        }
-
         pDstRectType = (OMX_CONFIG_RECTTYPE *)pComponentConfigStructure;
 
         if ((pDstRectType->nPortIndex != INPUT_PORT_INDEX) &&

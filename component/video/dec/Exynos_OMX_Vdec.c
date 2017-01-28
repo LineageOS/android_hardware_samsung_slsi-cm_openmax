@@ -147,10 +147,12 @@ OMX_ERRORTYPE Exynos_ResolutionUpdate(OMX_COMPONENTTYPE *pOMXComponent)
     EXYNOS_OMX_BASEPORT           *pInputPort         = &pExynosComponent->pExynosPort[INPUT_PORT_INDEX];
     EXYNOS_OMX_BASEPORT           *pOutputPort        = &pExynosComponent->pExynosPort[OUTPUT_PORT_INDEX];
 
-    pOutputPort->cropRectangle.nTop     = pOutputPort->newCropRectangle.nTop;
-    pOutputPort->cropRectangle.nLeft    = pOutputPort->newCropRectangle.nLeft;
-    pOutputPort->cropRectangle.nWidth   = pOutputPort->newCropRectangle.nWidth;
-    pOutputPort->cropRectangle.nHeight  = pOutputPort->newCropRectangle.nHeight;
+    if(pOutputPort->newCropRectangle.nHeight > pOutputPort->cropRectangle.nHeight) {
+        pOutputPort->cropRectangle.nTop     = pOutputPort->newCropRectangle.nTop;
+        pOutputPort->cropRectangle.nLeft    = pOutputPort->newCropRectangle.nLeft;
+        pOutputPort->cropRectangle.nWidth   = pOutputPort->newCropRectangle.nWidth;
+        pOutputPort->cropRectangle.nHeight  = pOutputPort->newCropRectangle.nHeight;
+    }
 
     pInputPort->portDefinition.format.video.nFrameWidth     = pInputPort->newPortDefinition.format.video.nFrameWidth;
     pInputPort->portDefinition.format.video.nFrameHeight    = pInputPort->newPortDefinition.format.video.nFrameHeight;
