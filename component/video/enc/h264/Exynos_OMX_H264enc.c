@@ -1728,6 +1728,7 @@ OMX_ERRORTYPE Exynos_H264Enc_Init(OMX_COMPONENTTYPE *pOMXComponent)
     if (pVideoEnc->bDRMPlayerMode == OMX_TRUE) {
         pVideoEnc->csc_handle = csc_init(CSC_METHOD_HW);
         csc_set_hw_property(pVideoEnc->csc_handle, CSC_HW_PROPERTY_FIXED_NODE, 2);
+        csc_set_hw_property(pVideoEnc->csc_handle, CSC_HW_PROPERTY_HW_TYPE, CSC_HW_TYPE_GSCALER);
         csc_set_hw_property(pVideoEnc->csc_handle, CSC_HW_PROPERTY_MODE_DRM, pVideoEnc->bDRMPlayerMode);
     } else {
         pVideoEnc->csc_handle = csc_init(csc_method);
