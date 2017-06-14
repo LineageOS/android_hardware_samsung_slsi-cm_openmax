@@ -1572,6 +1572,8 @@ OMX_ERRORTYPE Exynos_OMX_VideoEncodeComponentInit(OMX_IN OMX_HANDLETYPE hCompone
     pVideoEnc->quantization.nQpP = 5; // P frame quantization parameter
     pVideoEnc->quantization.nQpB = 5; // B frame quantization parameter
 
+    csc_set_hw_property(pVideoEnc->csc_handle, CSC_HW_PROPERTY_HW_TYPE, CSC_HW_TYPE_G2D);
+
     pExynosComponent->bMultiThreadProcess = OMX_TRUE;
 
     /* Input port */
