@@ -25,6 +25,7 @@
  */
 
 #include <utils/Log.h>
+#include <android/log.h>
 
 #include "Exynos_OSAL_Log.h"
 
