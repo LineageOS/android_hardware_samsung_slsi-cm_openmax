@@ -9,6 +9,7 @@ LOCAL_ARM_MODE := arm
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_STATIC_LIBRARIES := libseirenhw
+LOCAL_SHARED_LIBRARIES := liblog
 
 LOCAL_C_INCLUDES := \
 	$(EXYNOS_OMX_INC)/exynos \

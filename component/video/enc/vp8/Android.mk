@@ -37,7 +37,7 @@ LOCAL_ARM_MODE := arm
 LOCAL_STATIC_LIBRARIES := libExynosOMX_Venc libExynosOMX_OSAL libExynosOMX_Basecomponent \
 	libswconverter libExynosVideoApi
 LOCAL_SHARED_LIBRARIES := libc libdl libcutils libutils libui \
-	libExynosOMX_Resourcemanager libcsc libexynosv4l2 libion_exynos libhardware
+	libExynosOMX_Resourcemanager libcsc libexynosv4l2 libion_exynos libhardware liblog
 
 LOCAL_C_INCLUDES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \

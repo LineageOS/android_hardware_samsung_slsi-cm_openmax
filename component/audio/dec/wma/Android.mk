@@ -18,7 +18,7 @@ LOCAL_ARM_MODE := arm
 LOCAL_STATIC_LIBRARIES := libExynosOMX_Adec libExynosOMX_OSAL libExynosOMX_Basecomponent \
 	libsrpapi
 LOCAL_SHARED_LIBRARIES := libc libdl libcutils libutils libui \
-	libExynosOMX_Resourcemanager libffmpegapi\
+	libExynosOMX_Resourcemanager libffmpegapi liblog
 
 LOCAL_C_INCLUDES := $(EXYNOS_OMX_INC)/khronos \
 	$(EXYNOS_OMX_INC)/exynos \
