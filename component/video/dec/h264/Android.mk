@@ -43,7 +43,7 @@ LOCAL_ARM_MODE := arm
 LOCAL_STATIC_LIBRARIES := libExynosOMX_Vdec libExynosOMX_OSAL libExynosOMX_Basecomponent \
 	libswconverter libExynosVideoApi
 LOCAL_SHARED_LIBRARIES := libc libdl libcutils libutils libui \
-	libExynosOMX_Resourcemanager libcsc libexynosv4l2 libion_exynos libhardware
+	libExynosOMX_Resourcemanager libcsc libexynosv4l2 libion_exynos libhardware liblog
 
 ifeq ($(BOARD_USES_FIMC),true)
 LOCAL_SHARED_LIBRARIES += libexynosfimc

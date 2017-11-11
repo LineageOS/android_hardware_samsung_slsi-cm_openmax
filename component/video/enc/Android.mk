@@ -60,6 +60,6 @@ ifeq ($(BOARD_USE_QOS_CTRL), true)
 LOCAL_CFLAGS += -DUSE_QOS_CTRL
 endif
 
-LOCAL_SHARED_LIBRARIES := libcsc
+LOCAL_SHARED_LIBRARIES := libcsc liblog
 
 include $(BUILD_STATIC_LIBRARY)
