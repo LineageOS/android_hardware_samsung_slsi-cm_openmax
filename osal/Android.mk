@@ -78,6 +78,7 @@ endif
 
 LOCAL_SHARED_LIBRARIES := libhardware libnativewindow
 LOCAL_STATIC_LIBRARIES := liblog libcutils libarect libExynosVideoApi
+LOCAL_HEADER_LIBRARIES := libnativebase_headers
 
 LOCAL_C_INCLUDES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
@@ -90,7 +91,9 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi-cm/exynos/include \
 	$(TOP)/hardware/samsung_slsi-cm/$(TARGET_BOARD_PLATFORM)/include \
 	$(TOP)/hardware/samsung_slsi-cm/$(TARGET_SOC)/include \
-	$(TOP)/frameworks/native/libs/arect/include
+	$(TOP)/frameworks/native/libs/arect/include \
+	$(TOP)/frameworks/native/libs/nativebase/include \
+	$(TOP)/frameworks/native/libs/nativewindow/include
 
 LOCAL_ADDITIONAL_DEPENDENCIES += \
 	INSTALLED_KERNEL_HEADERS
