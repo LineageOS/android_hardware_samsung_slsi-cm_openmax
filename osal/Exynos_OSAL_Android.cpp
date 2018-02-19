@@ -123,6 +123,12 @@ OMX_ERRORTYPE Exynos_OSAL_LockANBHandle(
         break;
     }
 
+    if (mapper.importBuffer(bufferHandle, &bufferHandle) != 0) {
+        Exynos_OSAL_Log(EXYNOS_LOG_ERROR, "%s: mapper.importBuffer() failed", __func__);
+        ret = OMX_ErrorUndefined;
+        goto EXIT;
+    }
+
     if (mapper.lock(bufferHandle, usage, bounds, vaddr) != 0) {
         Exynos_OSAL_Log(EXYNOS_LOG_ERROR, "%s: mapper.lock() fail", __func__);
         ret = OMX_ErrorUndefined;
@@ -165,6 +171,12 @@ OMX_ERRORTYPE Exynos_OSAL_UnlockANBHandle(OMX_IN OMX_U32 handle)
 
     if (mapper.unlock(bufferHandle) != 0) {
         Exynos_OSAL_Log(EXYNOS_LOG_ERROR, "%s: mapper.unlock() fail", __func__);
+        ret = OMX_ErrorUndefined;
+        goto EXIT;
+    }
+
+    if (mapper.freeBuffer(bufferHandle) != 0) {
+        Exynos_OSAL_Log(EXYNOS_LOG_ERROR, "%s: mapper.freeBuffer() fail", __func__);
         ret = OMX_ErrorUndefined;
         goto EXIT;
     }
