@@ -11,6 +11,7 @@ LOCAL_MODULE := libOMX.Exynos.WMV.Decoder
 LOCAL_MODULE_RELATIVE_PATH := omx
 
 LOCAL_CFLAGS :=
+LOCAL_CFLAGS += -Wno-error
 
 ifeq ($(BOARD_USE_ANB), true)
 LOCAL_CFLAGS += -DUSE_ANB

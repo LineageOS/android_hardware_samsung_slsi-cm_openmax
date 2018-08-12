@@ -32,6 +32,8 @@ ifeq ($(BOARD_USE_QOS_CTRL), true)
 LOCAL_CFLAGS += -DUSE_QOS_CTRL
 endif
 
+LOCAL_CFLAGS += -Wno-error
+
 LOCAL_ARM_MODE := arm
 
 LOCAL_STATIC_LIBRARIES := libExynosOMX_Venc libExynosOMX_OSAL libExynosOMX_Basecomponent \
