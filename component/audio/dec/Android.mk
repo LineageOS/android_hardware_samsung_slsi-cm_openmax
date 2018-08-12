@@ -18,7 +18,12 @@ LOCAL_C_INCLUDES := \
 	$(EXYNOS_OMX_COMPONENT)/common \
 	$(EXYNOS_OMX_COMPONENT)/audio/dec \
 	$(EXYNOS_AUDIO_CODEC)/alp/include
-
+        
+LOCAL_CFLAGS := \
+    -Wno-unused-label \
+    -Wno-unused-parameter \
+    -Wno-unused-variable
+    
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
 LOCAL_CFLAGS += -DUSE_KHRONOS_OMX_HEADER
 LOCAL_C_INCLUDES += $(EXYNOS_OMX_INC)/khronos

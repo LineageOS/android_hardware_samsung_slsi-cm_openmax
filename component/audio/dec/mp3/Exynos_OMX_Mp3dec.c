@@ -515,7 +515,7 @@ OMX_ERRORTYPE Exynos_SRP_Mp3_Decode_Block(OMX_COMPONENTTYPE *pOMXComponent, EXYN
             }
         } else if (returnCodec == SRP_ERROR_IBUF_OVERFLOW) {
             isSRPIbufOverflow = OMX_TRUE;
-            ret = OMX_ErrorInputDataDecodeYet;
+            ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
         }
     }
 
@@ -538,11 +538,11 @@ OMX_ERRORTYPE Exynos_SRP_Mp3_Decode_Block(OMX_COMPONENTTYPE *pOMXComponent, EXYN
             if (pMp3Dec->hSRPMp3Handle.bSRPSendEOS == OMX_TRUE) {
                 pOutputData->dataLen = 0;
                 pExynosComponent->getAllDelayBuffer = OMX_TRUE;
-                ret = OMX_ErrorInputDataDecodeYet;
+                ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
             } else {
                 pExynosComponent->getAllDelayBuffer = OMX_FALSE;
                 if (isSRPIbufOverflow)
-                    ret = OMX_ErrorInputDataDecodeYet;
+                    ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
                 else
                     ret = OMX_ErrorNone;
             }
@@ -573,11 +573,11 @@ OMX_ERRORTYPE Exynos_SRP_Mp3_Decode_Block(OMX_COMPONENTTYPE *pOMXComponent, EXYN
         if (pMp3Dec->hSRPMp3Handle.bSRPSendEOS == OMX_TRUE) {
             pOutputData->dataLen = 0;
             pExynosComponent->getAllDelayBuffer = OMX_TRUE;
-            ret = OMX_ErrorInputDataDecodeYet;
+            ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
         } else {
             pExynosComponent->getAllDelayBuffer = OMX_FALSE;
             if (isSRPIbufOverflow)
-                ret = OMX_ErrorInputDataDecodeYet;
+                ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
             else
                 ret = OMX_ErrorNone;
         }
@@ -611,7 +611,7 @@ OMX_ERRORTYPE Exynos_SRP_Mp3_Decode_Block(OMX_COMPONENTTYPE *pOMXComponent, EXYN
                 ret = OMX_ErrorNone;
             } else {
                 pExynosComponent->getAllDelayBuffer = OMX_TRUE;
-                ret = OMX_ErrorInputDataDecodeYet;
+                ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
             }
         } else { /* Flush after EOS */
             pMp3Dec->hSRPMp3Handle.bSRPSendEOS = OMX_FALSE;
@@ -635,7 +635,7 @@ OMX_ERRORTYPE Exynos_SRP_Mp3Dec_bufferProcess(OMX_COMPONENTTYPE *pOMXComponent, 
     if ((!CHECK_PORT_ENABLED(pInputPort)) || (!CHECK_PORT_ENABLED(pOutputPort)) ||
             (!CHECK_PORT_POPULATED(pInputPort)) || (!CHECK_PORT_POPULATED(pOutputPort))) {
         if (pInputData->nFlags & OMX_BUFFERFLAG_EOS)
-            ret = OMX_ErrorInputDataDecodeYet;
+            ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
         else
             ret = OMX_ErrorNone;
 
@@ -643,7 +643,7 @@ OMX_ERRORTYPE Exynos_SRP_Mp3Dec_bufferProcess(OMX_COMPONENTTYPE *pOMXComponent, 
     }
     if (OMX_FALSE == Exynos_Check_BufferProcess_State(pExynosComponent)) {
         if (pInputData->nFlags & OMX_BUFFERFLAG_EOS)
-            ret = OMX_ErrorInputDataDecodeYet;
+            ret = ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet);
         else
             ret = OMX_ErrorNone;
 
@@ -653,7 +653,7 @@ OMX_ERRORTYPE Exynos_SRP_Mp3Dec_bufferProcess(OMX_COMPONENTTYPE *pOMXComponent, 
     ret = Exynos_SRP_Mp3_Decode_Block(pOMXComponent, pInputData, pOutputData);
 
     if (ret != OMX_ErrorNone) {
-        if (ret == OMX_ErrorInputDataDecodeYet) {
+        if (ret == ((OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet)) {
             pOutputData->usedDataLen = 0;
             pOutputData->remainDataLen = pOutputData->dataLen;
         } else {
