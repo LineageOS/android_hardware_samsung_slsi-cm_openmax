@@ -139,7 +139,7 @@ OMX_BOOL CheckFormatHWSupport(
     OMX_BOOL                         ret            = OMX_FALSE;
     EXYNOS_OMX_VIDEODEC_COMPONENT   *pVideoDec      = NULL;
     EXYNOS_MPEG2DEC_HANDLE          *pMpeg2Dec      = NULL;
-    ExynosVideoColorFormatType       eVideoFormat   = VIDEO_CODING_UNKNOWN;
+    ExynosVideoColorFormatType       eVideoFormat   = (ExynosVideoColorFormatType) VIDEO_CODING_UNKNOWN;
     int i;
 
     FunctionIn();
@@ -917,7 +917,7 @@ OMX_ERRORTYPE Mpeg2CodecSrcSetup(OMX_COMPONENTTYPE *pOMXComponent, EXYNOS_OMX_DA
     /* start header parsing */
     if (pInbufOps->Run(hMFCHandle) != VIDEO_ERROR_NONE) {
         Exynos_OSAL_Log(EXYNOS_LOG_ERROR, "Failed to run input buffer for header parsing");
-        ret = OMX_ErrorCodecInit;
+        ret = (OMX_ERRORTYPE) OMX_ErrorCodecInit;
         goto EXIT;
     }
 
@@ -929,7 +929,7 @@ OMX_ERRORTYPE Mpeg2CodecSrcSetup(OMX_COMPONENTTYPE *pOMXComponent, EXYNOS_OMX_DA
     }
 
     Exynos_OSAL_SleepMillisec(0);
-    ret = OMX_ErrorInputDataDecodeYet;
+    ret = (OMX_ERRORTYPE) OMX_ErrorInputDataDecodeYet;
     Mpeg2CodecStop(pOMXComponent, INPUT_PORT_INDEX);
 
 EXIT:
@@ -1795,7 +1795,7 @@ OMX_ERRORTYPE Exynos_Mpeg2Dec_SrcIn(OMX_COMPONENTTYPE *pOMXComponent, EXYNOS_OMX
             Exynos_OSAL_SleepMillisec(0);
         }
     } else if (bInStartCode == OMX_FALSE) {
-        ret = OMX_ErrorCorruptedFrame;
+        ret = (OMX_ERRORTYPE) OMX_ErrorCorruptedFrame;
         goto EXIT;
     }
 
