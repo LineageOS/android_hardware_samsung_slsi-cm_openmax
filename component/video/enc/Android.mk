@@ -23,6 +23,13 @@ LOCAL_C_INCLUDES := \
 LOCAL_ADDITIONAL_DEPENDENCIES += \
 	INSTALLED_KERNEL_HEADERS
 
+LOCAL_CFLAGS := \
+    -Wno-enum-conversion \
+    -Wno-unused-label \
+    -Wno-unused-parameter \
+    -Wno-unused-variable \
+    -Wno-undefined-inline
+
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
 LOCAL_CFLAGS += -DUSE_KHRONOS_OMX_HEADER
 LOCAL_C_INCLUDES += $(EXYNOS_OMX_INC)/khronos
