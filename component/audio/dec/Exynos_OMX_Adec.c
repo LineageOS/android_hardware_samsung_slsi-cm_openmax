@@ -112,7 +112,7 @@ OMX_ERRORTYPE Exynos_OMX_UseBuffer(
                 temp_bufferHeader->nOutputPortIndex = OUTPUT_PORT_INDEX;
 
             pExynosPort->assignedBufferNum++;
-            if (pExynosPort->assignedBufferNum == pExynosPort->portDefinition.nBufferCountActual) {
+            if (((OMX_U32) pExynosPort->assignedBufferNum) == ((OMX_U32) pExynosPort->portDefinition.nBufferCountActual)) {
                 pExynosPort->portDefinition.bPopulated = OMX_TRUE;
                 /* Exynos_OSAL_MutexLock(pExynosComponent->compMutex); */
                 Exynos_OSAL_SemaphorePost(pExynosPort->loadedResource);
@@ -210,7 +210,7 @@ OMX_ERRORTYPE Exynos_OMX_AllocateBuffer(
             else
                 temp_bufferHeader->nOutputPortIndex = OUTPUT_PORT_INDEX;
             pExynosPort->assignedBufferNum++;
-            if (pExynosPort->assignedBufferNum == pExynosPort->portDefinition.nBufferCountActual) {
+            if (((unsigned int) pExynosPort->assignedBufferNum) == ((unsigned int) pExynosPort->portDefinition.nBufferCountActual)) {
                 pExynosPort->portDefinition.bPopulated = OMX_TRUE;
                 /* Exynos_OSAL_MutexLock(pExynosComponent->compMutex); */
                 Exynos_OSAL_SemaphorePost(pExynosPort->loadedResource);
@@ -615,7 +615,7 @@ OMX_BOOL Exynos_Preprocessor_InputData(OMX_COMPONENTTYPE *pOMXComponent)
 
         if (((inputData->allocSize) - (inputData->dataLen)) >= copySize) {
             if (copySize > 0)
-                Exynos_OSAL_Memcpy(inputData->multiPlaneBuffer.dataBuffer[AUDIO_DATA_PLANE] + inputData->dataLen, checkInputStream, copySize);
+                 Exynos_OSAL_Memcpy(inputData->multiPlaneBuffer.dataBuffer + inputData->dataLen, checkInputStream, copySize);
 
             inputUseBuffer->dataLen -= copySize;
             inputUseBuffer->remainDataLen -= copySize;
