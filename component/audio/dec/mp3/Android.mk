@@ -10,7 +10,10 @@ LOCAL_SRC_FILES := \
 LOCAL_MODULE := libOMX.Exynos.MP3.Decoder
 LOCAL_MODULE_RELATIVE_PATH := omx
 
-LOCAL_CFLAGS :=
+LOCAL_CFLAGS := \
+    -Wno-unused-label \
+    -Wno-unused-parameter \
+    -Wno-unused-variable
 
 LOCAL_ARM_MODE := arm
 

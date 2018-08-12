@@ -17,7 +17,10 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE := libExynosOMX_OSAL
 
-LOCAL_CFLAGS :=
+LOCAL_CFLAGS := \
+    -Wno-unused-label \
+    -Wno-unused-parameter \
+    -Wno-unused-variable
 
 ifeq ($(BOARD_USE_ANDROID), true)
 LOCAL_SRC_FILES += \
