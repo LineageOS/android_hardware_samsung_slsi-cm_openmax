@@ -45,7 +45,6 @@ LOCAL_SHARED_LIBRARIES := libc libdl libcutils libutils libui \
 	libExynosOMX_Resourcemanager libcsc libexynosv4l2 libion_exynos libhardware liblog
 
 LOCAL_C_INCLUDES := \
-	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
 	$(EXYNOS_OMX_INC)/exynos \
 	$(EXYNOS_OMX_TOP)/osal \
 	$(EXYNOS_OMX_TOP)/core \
@@ -55,8 +54,7 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi-cm/exynos/include \
 	$(TOP)/hardware/samsung_slsi-cm/$(TARGET_BOARD_PLATFORM)/include
 
-LOCAL_ADDITIONAL_DEPENDENCIES += \
-	INSTALLED_KERNEL_HEADERS
+LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
 LOCAL_CFLAGS += -DUSE_KHRONOS_OMX_HEADER

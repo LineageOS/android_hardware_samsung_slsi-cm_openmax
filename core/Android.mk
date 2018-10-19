@@ -18,13 +18,11 @@ LOCAL_SHARED_LIBRARIES := libc libdl libcutils libutils \
 	libExynosOMX_Resourcemanager liblog
 
 LOCAL_C_INCLUDES := \
-	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
 	$(EXYNOS_OMX_INC)/exynos \
 	$(EXYNOS_OMX_TOP)/osal \
 	$(EXYNOS_OMX_TOP)/component/common
 
-LOCAL_ADDITIONAL_DEPENDENCIES := \
-	INSTALLED_KERNEL_HEADERS
+LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
 LOCAL_CFLAGS += -DUSE_KHRONOS_OMX_HEADER
